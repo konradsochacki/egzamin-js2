@@ -24,10 +24,10 @@ const board = [
   ["X", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "X"],
   ["X", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "X"],
   ["X", "0", "0", "0", "X", "0", "0", "0", "0", "Y", "0", "X"],
-  ["X", "0", "1", "X", "X", "X", "0", "0", "0", "0", "0", "X"],
+  ["X", "0", "0", "X", "X", "X", "0", "0", "0", "0", "0", "X"],
   ["X", "0", "0", "0", "X", "0", "0", "0", "0", "0", "0", "X"],
   ["X", "0", "0", "0", "X", "0", "0", "0", "0", "0", "0", "X"],
-  ["X", "0", "Y", "0", "0", "0", "0", "0", "0", "0", "0", "X"],
+  ["X", "0", "Y", "0", "0", "0", "0", "1", "0", "0", "0", "X"],
   ["X", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "X"],
   ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X", "X"],
 ];
@@ -122,7 +122,7 @@ class Bounce {
     this.ball = board[row][col];
   }
 
-  IterateThrought() {
+  Vector() {
     if (this.col == 0 && this.row == 0) {
       this.rowSpeed = 1;
       this.colSpeed = 1;
@@ -251,7 +251,7 @@ class Bounce {
       console.table(newBoard);
       console.log(self.ball);
       console.log(`row is ${self.row}, column is ${self.col}`);
-      self.IterateThrought();
+      self.Vector();
     }
     let start = setInterval(looping, 1000);
   }
